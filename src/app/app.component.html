@@ -1,0 +1,47 @@
+<h1>Zadanie 1</h1>
+
+<p> {{ 123.456 | currency:"PLN" }} </p>
+<p> {{ "2020-06-01"| date:"EEEE" }} </p> <br>
+
+<h1>Zadanie 2</h1>
+<ol>
+    <li *ngFor="let item of produkt">
+      <ul>
+        <li>Nazwa: {{item.nazwa}}</li>
+        <li>Cena: <b>{{item.cena | currency:item.waluta}}</b> ({{item.waluta}})</li>
+        <li>Data sprzedaży: <b>{{item.dataSprzedazy | date:"EEEE, d MMMM y" | titlecase}}</b></li>
+        <li><img [src]="item.zdjecie" width="200" [alt]="item.nazwa"></li>
+        <li>URL zdjęcia: <a [href]="item.zdjecie">{{item.zdjecie}}</a></li>
+        <li>Obiekt w postaci JSON:
+          <code>
+            {{item | json}}
+          </code>
+        </li>
+      </ul>
+      <hr>
+    </li>
+  </ol>
+
+  <h4>Zadanie 4 - potok <code>numberOfSentences</code> </h4>
+  <p> ' ' = {{ inwokacja | numberOfSentences:' ' }} </p>
+  <p> 'a' = {{ inwokacja | numberOfSentences:'a' }} </p>
+  <p> 'o' = {{ inwokacja | numberOfSentences:'o' }} </p>
+  <p> 'cię' = {{ inwokacja | numberOfSentences:'cię' }} </p>
+  <p> 'obie' = {{ inwokacja | numberOfSentences:'obie' }} </p>
+
+
+  <h4>Zadanie 5 - potok <code>capitalWords</code> </h4>
+  <p> {{ inwokacja }} </p>
+  <p> {{ inwokacja | capitalWords }} </p>
+  <p> {{ inwokacja | capitalWords | uppercase }} </p>
+
+  <p>Zadanie 6 - potok <code>limitTo</code> </p>
+  <h4> <code>limitTo</code> dla ciągu znaków </h4>
+  <p> {{ inwokacja }} </p>
+  <p> {{ inwokacja | limitTo:19 }} </p>
+  <p> {{ inwokacja | limitTo:22:7 }} </p>
+  <h4> <code>limitTo</code> dla tablic </h4>
+  <p> {{ liczbyPierwsze }} </p>
+  <p> {{ liczbyPierwsze | limitTo:5 }} </p>
+  <p> {{ liczbyPierwsze | limitTo:7:5 }} </p>
+ 
